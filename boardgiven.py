@@ -9,6 +9,9 @@ board = [
     [0,4,0,0,5,0,0,3,6],
     [7,0,3,0,1,8,0,0,0]
 ]
+
+
+# finding emty cell
 def find_empty(bo):
     for i in range(len(bo)):
         for j in range(len(bo[0])):
@@ -18,6 +21,7 @@ def find_empty(bo):
     return None
 
 
+# checking every row,colum and box with the particular digit
 def possible(bo, num, pos):
     # Check row
     for i in range(len(bo[0])):
@@ -41,6 +45,8 @@ def possible(bo, num, pos):
 
     return True    
 
+
+# trying differnt values at the found position
 def solve(bo):
      # print(bo) for dry run 
     find = find_empty(bo)
@@ -60,6 +66,7 @@ def solve(bo):
 
     return False
 
+# to print the board sytematically
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
